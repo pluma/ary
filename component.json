@@ -1,0 +1,28 @@
+{
+  "name": "ary",
+  "repo": "pluma/ary",
+  "description": "Clips function argument lengths.",
+  "keywords": [
+    "arity",
+    "n-ary",
+    "unary",
+    "binary",
+    "ternary",
+    "function",
+    "arguments",
+    "restrict",
+    "length"
+  ],
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": ["dist/ary.js"],
+  "main": "./dist/ary.js",
+  "ignore": [
+    "**/.*",
+    "build",
+    "components",
+    "node_modules"
+  ],
+  "license": "UNLICENSE"
+}
