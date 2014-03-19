@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="ary : clips function argument lengths." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>ary</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/pluma/ary">View on GitHub</a>
+
+          <h1 id="project_title">ary</h1>
+          <h2 id="project_tagline">clips function argument lengths.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/pluma/ary/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/pluma/ary/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="synopsis" class="anchor" href="#synopsis"><span class="octicon octicon-link"></span></a>Synopsis</h1>
+
+<p><strong>ary</strong> is a JavaScript function for restricting a function to a given number of arguments (i.e. capping its <em>arity</em>).</p>
+
+<p><a href="http://nodejs.org/api/documentation.html#documentation_stability_index"><img src="http://b.repl.ca/v1/stability-5_--_locked-blue.png" alt="stability 5 - locked"></a> <a href="http://unlicense.org/"><img src="http://b.repl.ca/v1/license-Unlicense-lightgrey.png" alt="license - Unlicense"></a> <a href="https://flattr.com/submit/auto?user_id=pluma&amp;url=https://github.com/pluma/ary"><img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
+
+<p><a href="https://ci.testling.com/pluma/ary"><img src="https://ci.testling.com/pluma/ary.png" alt="browser support"></a></p>
+
+<p><a href="https://travis-ci.org/pluma/ary"><img src="https://travis-ci.org/pluma/ary.png?branch=master" alt="Build Status"></a> <a href="https://coveralls.io/r/pluma/ary?branch=master"><img src="https://coveralls.io/repos/pluma/ary/badge.png?branch=master" alt="Coverage Status"></a> <a href="https://david-dm.org/pluma/ary"><img src="https://david-dm.org/pluma/ary.png?theme=shields.io" alt="Dependencies"></a></p>
+
+<h1>
+<a name="why" class="anchor" href="#why"><span class="octicon octicon-link"></span></a>Why?</h1>
+
+<p>It's trivial to implement, but in order to keep code DRY (and avoid silly mistakes) it makes sense to define this function only once per project. This library is the logical consequence of that.</p>
+
+<h1>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h1>
+
+<h2>
+<a name="nodejs" class="anchor" href="#nodejs"><span class="octicon octicon-link"></span></a>Node.js</h2>
+
+<h3>
+<a name="with-npm" class="anchor" href="#with-npm"><span class="octicon octicon-link"></span></a>With NPM</h3>
+
+<div class="highlight highlight-sh"><pre>npm install ary
+</pre></div>
+
+<h3>
+<a name="from-source" class="anchor" href="#from-source"><span class="octicon octicon-link"></span></a>From source</h3>
+
+<div class="highlight highlight-sh"><pre>git clone https://github.com/pluma/ary.git
+<span class="nb">cd </span>ary
+npm install
+make
+</pre></div>
+
+<h2>
+<a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h2>
+
+<h3>
+<a name="with-component" class="anchor" href="#with-component"><span class="octicon octicon-link"></span></a>With component</h3>
+
+<div class="highlight highlight-sh"><pre>component install pluma/ary
+</pre></div>
+
+<p><a href="https://github.com/component/component">Learn more about component</a>.</p>
+
+<h3>
+<a name="with-bower" class="anchor" href="#with-bower"><span class="octicon octicon-link"></span></a>With bower</h3>
+
+<div class="highlight highlight-sh"><pre>bower install ary
+</pre></div>
+
+<p><a href="https://github.com/twitter/bower">Learn more about bower</a>.</p>
+
+<h3>
+<a name="with-a-commonjs-module-loader" class="anchor" href="#with-a-commonjs-module-loader"><span class="octicon octicon-link"></span></a>With a CommonJS module loader</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/ary/master/dist/ary.min.js">latest minified CommonJS release</a> and add it to your project.</p>
+
+<p><a href="http://wiki.commonjs.org/wiki/Modules/1.1">Learn more about CommonJS modules</a>.</p>
+
+<h3>
+<a name="with-an-amd-module-loader" class="anchor" href="#with-an-amd-module-loader"><span class="octicon octicon-link"></span></a>With an AMD module loader</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/ary/master/dist/ary.amd.min.js">latest minified AMD release</a> and add it to your project.</p>
+
+<p><a href="http://requirejs.org/docs/whyamd.html">Learn more about AMD modules</a>.</p>
+
+<h3>
+<a name="as-a-standalone-library" class="anchor" href="#as-a-standalone-library"><span class="octicon octicon-link"></span></a>As a standalone library</h3>
+
+<p>Download the <a href="https://raw.github.com/pluma/ary/master/dist/ary.globals.min.js">latest minified standalone release</a> and add it to your project.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/your/js/path/ary.globals.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<p>This makes the <code>ary</code> function available in the global namespace.</p>
+
+<h1>
+<a name="basic-usage-example" class="anchor" href="#basic-usage-example"><span class="octicon octicon-link"></span></a>Basic usage example</h1>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">ary</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ary'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">log</span> <span class="o">=</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">console</span><span class="p">);</span>
+
+<span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">log</span><span class="p">);</span> <span class="c1">// passes in three arguments: item, index, array</span>
+<span class="cm">/* Console output:</span>
+<span class="cm">1, 0, [1, 2, 3, 4]</span>
+<span class="cm">2, 1, [1, 2, 3, 4]</span>
+<span class="cm">3, 2, [1, 2, 3, 4]</span>
+<span class="cm">4, 3, [1, 2, 3, 4]</span>
+<span class="cm">*/</span>
+
+<span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">ary</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nx">log</span><span class="p">));</span> <span class="c1">// only logs the first argument: item</span>
+<span class="cm">/* Console output:</span>
+<span class="cm">1</span>
+<span class="cm">2</span>
+<span class="cm">3</span>
+<span class="cm">4</span>
+<span class="cm">*/</span>
+</pre></div>
+
+<h1>
+<a name="advanced-usage-example" class="anchor" href="#advanced-usage-example"><span class="octicon octicon-link"></span></a>Advanced usage example</h1>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">ary</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'ary'</span><span class="p">);</span>
+
+<span class="c1">// Our example function: takes any number of arguments</span>
+<span class="c1">// and returns them as a dash-separated string</span>
+<span class="kd">function</span> <span class="nx">dashed</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">).</span><span class="nx">join</span><span class="p">(</span><span class="s1">'-'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">dashed</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">);</span> <span class="c1">// 'a-b-c-d';</span>
+
+<span class="c1">// We can create re-usable decorators</span>
+<span class="kd">var</span> <span class="nx">nullary</span> <span class="o">=</span> <span class="nx">ary</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">unary</span> <span class="o">=</span> <span class="nx">ary</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">binary</span> <span class="o">=</span> <span class="nx">ary</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">dashed0</span> <span class="o">=</span> <span class="nx">nullary</span><span class="p">(</span><span class="nx">dashed</span><span class="p">);</span>
+<span class="nx">dashed0</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">);</span> <span class="c1">// ''</span>
+
+<span class="kd">var</span> <span class="nx">dashed1</span> <span class="o">=</span> <span class="nx">unary</span><span class="p">(</span><span class="nx">dashed</span><span class="p">);</span>
+<span class="nx">dashed1</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">);</span> <span class="c1">// 'a'</span>
+
+<span class="c1">// Named arity functions for 0 to 3 are included out of the box:</span>
+<span class="kd">var</span> <span class="nx">dashed2</span> <span class="o">=</span> <span class="nx">ary</span><span class="p">.</span><span class="nx">binary</span><span class="p">(</span><span class="nx">dashed</span><span class="p">);</span>
+<span class="nx">dashed2</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">);</span> <span class="c1">// 'a-b'</span>
+
+<span class="c1">// Or pass both arguments at once!</span>
+<span class="kd">var</span> <span class="nx">dashed3</span> <span class="o">=</span> <span class="nx">ary</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="nx">dashed</span><span class="p">);</span>
+<span class="nx">dashed3</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">);</span> <span class="c1">// 'a-b-c'</span>
+
+<span class="c1">// If a wrapped function is called with less arguments,</span>
+<span class="c1">// they will be set to `undefined`:</span>
+
+<span class="nx">dashed2</span><span class="p">(</span><span class="s1">'a'</span><span class="p">);</span> <span class="c1">// 'a-'</span>
+<span class="nx">dashed3</span><span class="p">(</span><span class="s1">'a'</span><span class="p">);</span> <span class="c1">// 'a--'</span>
+
+<span class="c1">// Although the original function has no length ...</span>
+<span class="nx">dashed</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 0</span>
+
+<span class="c1">// ... the wrapped functions always have the expected length!</span>
+<span class="nx">dashed0</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 0</span>
+<span class="nx">dashed1</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="nx">dashed2</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 2</span>
+<span class="nx">dashed3</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="c1">// 3</span>
+
+<span class="c1">// If the function is named, the wrapped function retains the name!</span>
+<span class="nx">dashed</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// 'dashed'</span>
+<span class="nx">dashed0</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// 'dashed'</span>
+<span class="nx">dashed0</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">dashed</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="nx">dashed1</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">dashed</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="nx">dashed2</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">dashed</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// true</span>
+<span class="nx">dashed3</span><span class="p">.</span><span class="nx">name</span> <span class="o">===</span> <span class="nx">dashed</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span> <span class="c1">// true</span>
+</pre></div>
+
+<h1>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h1>
+
+<h2>
+<a name="aryaritynumber-funcfunctionfunction" class="anchor" href="#aryaritynumber-funcfunctionfunction"><span class="octicon octicon-link"></span></a>ary(arity:Number, func:Function):Function</h2>
+
+<p>Wraps the given function in a new function of the given arity.</p>
+
+<p>If the wrapped function is called with more than <code>arity</code> arguments, any additional arguments will be dropped.</p>
+
+<p>If the wrapped function is called with less than <code>arity</code> arguments, any missing arguments will be set to <code>undefined</code>.</p>
+
+<h2>
+<a name="aryaritynumberfunction" class="anchor" href="#aryaritynumberfunction"><span class="octicon octicon-link"></span></a>ary(arity:Number):Function</h2>
+
+<p>Returns a function that will wrap a function in a new function of the given arity.</p>
+
+<h2>
+<a name="arynullaryfuncfunctionfunction" class="anchor" href="#arynullaryfuncfunctionfunction"><span class="octicon octicon-link"></span></a>ary.nullary(func:Function):Function</h2>
+
+<p>Shorthand for <code>ary(0, func)</code>.</p>
+
+<h2>
+<a name="aryunaryfuncfunctionfunction" class="anchor" href="#aryunaryfuncfunctionfunction"><span class="octicon octicon-link"></span></a>ary.unary(func:Function):Function</h2>
+
+<p>Shorthand for <code>ary(1, func)</code>.</p>
+
+<h2>
+<a name="arybinaryfuncfunctionfunction" class="anchor" href="#arybinaryfuncfunctionfunction"><span class="octicon octicon-link"></span></a>ary.binary(func:Function):Function</h2>
+
+<p>Shorthand for <code>ary(2, func)</code>.</p>
+
+<h2>
+<a name="aryternaryfuncfunctionfunction" class="anchor" href="#aryternaryfuncfunctionfunction"><span class="octicon octicon-link"></span></a>ary.ternary(func:Function):Function</h2>
+
+<p>Shorthand for <code>ary(3, func)</code>.</p>
+
+<h1>
+<a name="unlicense" class="anchor" href="#unlicense"><span class="octicon octicon-link"></span></a>Unlicense</h1>
+
+<p>This is free and unencumbered public domain software. For more information, see <a href="http://unlicense.org/">http://unlicense.org/</a> or the accompanying <a href="https://github.com/pluma/ary/blob/master/UNLICENSE">UNLICENSE</a> file.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">ary maintained by <a href="https://github.com/pluma">pluma</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
